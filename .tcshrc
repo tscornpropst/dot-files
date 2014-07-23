@@ -1,0 +1,40 @@
+# Configuration for tcsh
+
+umask 002
+
+set path = (  \
+              /bin \
+              /sbin \
+              /usr/bin \
+              /usr/sbin \
+              /usr/local/bin \
+              /usr/local/sbin \
+              /usr/local/git/bin \
+              /Applications/Xcode.app/Contents/Developer/usr/bin \
+              $HOME/bin \
+           )
+
+setenv EDITOR vim
+setenv PAGER /usr/bin/less
+setenv BLOCKSIZE K
+#setenv PERL5LIB $HOME/lib/perl5
+
+if ($?prompt) then
+    set filec
+    set autolist
+    set autologout = 0
+    set correct = cmd
+    set history = 100
+    set savehist = 100
+    set symlinks = ignore
+    set mail = (/var/spool/mail/$USER)
+    set prompt = '%m:%B%/>%b '
+
+    unset autologout
+
+    source ~/.aliases
+
+    if ( $TERM == xterm-256color ) then
+        echo -n "]2;$HOST"
+    endif
+endif

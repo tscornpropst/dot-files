@@ -1,0 +1,21 @@
+[user]
+	name = tscornpropst
+	email = tscornpropst@gmail.com
+[credential]
+	helper = osxkeychain
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
